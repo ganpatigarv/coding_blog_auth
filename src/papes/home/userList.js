@@ -75,9 +75,9 @@ export default function UserListTable() {
         <Box
             sx={{
                 boxShadow: 10,
-                width: '95%',
-                paddingTop: 100,
-                height: "90%",
+                width: '100%',
+                padding: 10,
+                height: "99%",
                 overflow: 'hidden', alignSelf: "center", justifyContent: "center", alignItems: "center",
                 bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#101010' : '#fff'),
                 color: (theme) =>
@@ -94,8 +94,8 @@ export default function UserListTable() {
 
                 <Button variant="contained">Add New User</Button>
             </Stack>
-            <Paper sx={{ width: '100%', overflow: 'hidden', alignSelf: "center" }}>
-                <TableContainer sx={{ maxHeight: 440 }}>
+            <Paper sx={{ width: '95%', overflow: 'hidden', alignSelf: "center" }}>
+                <TableContainer sx={{ maxHeight: 490 }}>
                     <Table stickyHeader aria-label="sticky table">
                         <TableHead>
                             <TableRow>
