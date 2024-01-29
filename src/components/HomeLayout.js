@@ -19,7 +19,7 @@ import { Navigate, Outlet, Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
- 
+
 
 const Search = styled('div')(({ theme }) => ({
 
@@ -62,7 +62,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export const HomeLayout=()=> {
+export const HomeLayout = () => {
     let navigate = useNavigate();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -167,99 +167,123 @@ export const HomeLayout=()=> {
 
     return (
         <>
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
-                    >
-                        MUI
-                    </Typography>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search>
+            <Box sx={{ flexGrow: 1 }}>
+                <AppBar position="static">
+                    <Toolbar>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="open drawer"
+                            sx={{ mr: 2 }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
                         <Typography
                             variant="h6"
                             noWrap
                             component="div"
                             sx={{ display: { xs: 'none', sm: 'block' } }}
-                         onClick={()=>navigate("login")}
-                       >
-                          Login
+                        >
+                            MUI
                         </Typography>
-                        <Typography
+                        <Search>
+                            <SearchIconWrapper>
+                                <SearchIcon />
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                                placeholder="Search…"
+                                inputProps={{ 'aria-label': 'search' }}
+                            />
+                        </Search>
+                        {/* <Typography
                             variant="h6"
                             noWrap
                             component="div"
                             sx={{ display: { xs: 'none', sm: 'block' } }}
-                            onClick={() => navigate("/signup")}>{`  Sign Up`} </Typography>
-                       <Box sx={{ flexGrow: 1 }} />
-                       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="error">
-                                <MailIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            size="large"
-                            aria-label="show 17 new notifications"
-                            color="inherit"
+                            onClick={() => navigate("login")}
                         >
-                            <Badge badgeContent={17} color="error">
-                                <NotificationsIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
+                            Login
+                        </Typography> */}
+
+                        {/* <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: 'none', sm: 'block' } }}
+                            onClick={() => navigate("user-list")}
                         >
-                            <AccountCircle />
-                        </IconButton>
-                    </Box>
-                       
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                            size="large"
-                            aria-label="show more"
-                            aria-controls={mobileMenuId}
-                            aria-haspopup="true"
-                            onClick={handleMobileMenuOpen}
-                            color="inherit"
-                        >
-                            <MoreIcon />
-                        </IconButton>
-                    </Box>
-                </Toolbar>
-            </AppBar>
-            {renderMobileMenu}
-            {renderMenu}
-           </Box>
+                            {` ${" User List"} `}
+                        </Typography> */}
+                        <Typography sx={{ minWidth: 100 }}
+                            onClick={() => navigate("/dashboard/settings")}
+                        >Contact</Typography>
+                        <Typography sx={{ minWidth: 100 }}
+                            onClick={() => navigate("/dashboard/profile")}
+                        >Profile</Typography>
+                        <Typography sx={{ minWidth: 100 }}
+                            onClick={() => navigate("/user-list")}
+                        >User List</Typography>
+                        <Typography sx={{ minWidth: 100 }}
+                            onClick={() => navigate("/signup")}
+                        >Sign Up</Typography>
+                        <Typography sx={{ minWidth: 100 }}
+                            onClick={() => navigate("/login")}
+                        >Login</Typography>
+                        {/* <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: 'none', sm: 'block' } }}
+                            >{`  Sign Up`} </Typography> */}
+                        <Box sx={{ flexGrow: 1 }} />
+                        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                                <Badge badgeContent={4} color="error">
+                                    <MailIcon />
+                                </Badge>
+                            </IconButton>
+                            <IconButton
+                                size="large"
+                                aria-label="show 17 new notifications"
+                                color="inherit"
+                            >
+                                <Badge badgeContent={17} color="error">
+                                    <NotificationsIcon />
+                                </Badge>
+                            </IconButton>
+                            <IconButton
+                                size="large"
+                                edge="end"
+                                aria-label="account of current user"
+                                aria-controls={menuId}
+                                aria-haspopup="true"
+                                onClick={handleProfileMenuOpen}
+                                color="inherit"
+                            >
+                                <AccountCircle />
+                            </IconButton>
+                        </Box>
+
+                        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                            <IconButton
+                                size="large"
+                                aria-label="show more"
+                                aria-controls={mobileMenuId}
+                                aria-haspopup="true"
+                                onClick={handleMobileMenuOpen}
+                                color="inherit"
+                            >
+                                <MoreIcon />
+                            </IconButton>
+                        </Box>
+                    </Toolbar>
+                </AppBar>
+                {renderMobileMenu}
+                {renderMenu}
+            </Box>
             <Outlet />
         </>
     );
 }
 
- 

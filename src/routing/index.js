@@ -14,6 +14,7 @@ import HomePage from "../papes/home";
 import LoginPage from "../papes/auth/login";
 import ProfilePage from "../papes/home/profile";
 import SettingsPage from "../papes/notification/settings";
+import UserListTable from "../papes/home/userList";
 
 
 const getUserData = () =>
@@ -43,6 +44,7 @@ export const router = createBrowserRouter(
           <Route path="/" element={<HomePage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="signup" element={<SignUp />} />
+            <Route path="user-list" element={<UserListTable />} />
         </Route>
   
         <Route path="/dashboard" element={<ProtectedLayout />}>
